@@ -1,0 +1,141 @@
+.typewriteSection{
+    padding: 40px;
+    width: 50%;
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.responsiveTypeWriteSection{
+    display: none;
+}
+
+.typeWriting-1,
+.typeWriting-2{
+    border-right: solid 3px rgba(0,255,0,.0);
+    white-space: nowrap;
+    overflow: hidden;
+    font-family: 'Source Code Pro', monospace;
+    font-size: 18px;
+    color: rgba(255,255,255);
+    margin: 0;
+}
+
+.typeWriting-1{
+    animation:  typeWriting-text 4s steps(28,end) 1s 1 normal both,
+                typeWriting-cursorend 5.5s steps(28,end);
+}
+
+.typeWriting-2{
+    animation:  typeWriting-text-large 4s steps(60,end) 5.5s 1 normal both,
+                typeWriting-cursor 900ms steps(60,end) 5.5s infinite;
+}
+
+@keyframes typeWriting-text {
+
+    from{
+        width: 0ch;
+    }
+    to{
+        width: 28ch;
+    }
+
+}
+
+@keyframes typeWriting-text-large {
+    from{
+        width: 0ch;
+    }
+    to{
+        width: 60ch;
+    }
+}
+
+@keyframes typeWriting-cursor {
+    from{
+        border-right: solid 3px rgba(0,255,0,.75);
+        border-right-color: rgba(255,255,255,.75)
+    }
+    to{
+        border-right-color: transparent
+    }
+}
+
+@keyframes typeWriting-cursorend {
+    0%{
+        border-right: solid 3px rgba(0,255,0,.75);
+        border-right-color: rgba(255,255,255,.75)
+    }
+    12%{
+        border-right-color: transparent;
+    }
+    24%{
+        border-right: solid 3px rgba(0,255,0,.75);
+        border-right-color: rgba(255,255,255,.75)
+    }
+    36%{
+        border-right-color: transparent;
+    }
+    48%{
+        border-right: solid 3px rgba(0,255,0,.75);
+        border-right-color: rgba(255,255,255,.75)
+    }
+    60%{
+        border-right-color: transparent;
+    }
+    72%{
+        border-right: solid 3px rgba(0,255,0,.75);
+        border-right-color: rgba(255,255,255,.75)
+    }
+    84%{
+        border-right-color: transparent;
+    }
+    96%{
+        border-right: solid 3px rgba(0,255,0,.75);
+        border-right-color: rgba(255,255,255,.75)
+    }
+    100%{
+        border-right-color: transparent;
+    }
+}
+
+.loader{
+    display: none;
+    width: 40px;
+    height: 40px;
+    border: 16px solid white;
+    border-radius: 50%;
+    border-top: 16px solid #071013;
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+
+
+
+@media  screen and (max-width: 970px) {
+
+    .typewriteSection{
+        display: none;
+    }
+
+    .responsiveTypeWriteSection{
+        display: block;
+        width: 90%;
+        color: #fbfbfb;
+        font-size: 20px;
+        text-align: center;
+    }
+
+    .typeWritingRes:first-child{
+        font-size: 24px;
+    }
+}
